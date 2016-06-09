@@ -6,6 +6,7 @@ rvm:
   - '1.9.3'
   - '2.0.0'
   - '2.1.1'
+  - '2.2.4'
   - jruby-19mode
 #  - rbx-2.1.1
 script:
@@ -14,3 +15,4 @@ script:
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -y r-base r-base-dev
+  - gem install bundler
