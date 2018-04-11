@@ -167,4 +167,11 @@ describe RinRuby do
       expect(output).to eq("[1] 2\n")
     end
   end
+
+  context "engine_pid" do
+    it "returns a non-trivial pid" do
+      @r = RinRuby.new
+      expect(@r.engine_pid).to be > 0
+    end
+  end
 end

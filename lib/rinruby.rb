@@ -486,6 +486,12 @@ class RinRuby
     @echo_writer = old_echo_writer
   end
 
+  # Returns the pid of the engine process.
+  def engine_pid
+    raise EngineClosed if @engine.closed?
+    @engine.pid
+  end
+
   private
 
   #:stopdoc:
