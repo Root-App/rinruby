@@ -183,4 +183,20 @@ describe RinRuby do
       expect(r.engine_process_status).to be_a(Process::Status)
     end
   end
+
+  context "engine_closed?" do
+    before(:each) do
+      @r = RinRuby.new
+    end
+
+    it { expect(@r.engine_closed?).to eq(false) }
+
+    context "after quitting" do
+      before(:each) do
+        @r.quit
+      end
+
+      it { expect(@r.engine_closed?).to eq(true) }
+    end
+  end
 end

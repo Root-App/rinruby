@@ -494,6 +494,11 @@ class RinRuby
     @engine.pid
   end
 
+  # Returns true if engine is completely closed, false otherwise.
+  def engine_closed?
+    @engine.closed?
+  end
+
   private
 
   #:stopdoc:
