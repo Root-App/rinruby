@@ -174,4 +174,13 @@ describe RinRuby do
       expect(@r.engine_pid).to be > 0
     end
   end
+
+  context "engine_process_status" do
+    it "returns process status object after quitting" do
+      r = RinRuby.new
+      expect(r.engine_process_status).to eq(nil)
+      r.quit
+      expect(r.engine_process_status).to be_a(Process::Status)
+    end
+  end
 end

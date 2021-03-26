@@ -74,6 +74,7 @@ require 'rinruby/version'
 class RinRuby
 
   attr_accessor :echo_enabled
+  attr_reader :engine_process_status
   attr_reader :executable
   attr_reader :port_number
   attr_reader :port_width
@@ -213,6 +214,7 @@ class RinRuby
       # TODO: Verify if read is needed
       @socket.read()
       @engine.close
+      @engine_process_status = $?
 
       @server_socket.close
       true
